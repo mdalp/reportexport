@@ -45,4 +45,4 @@ class TestReportFactory:
         reports = ReportFactory.create_batch(n_reports)
 
         for report, mock_id in zip(reports, expected_type_mock_list):
-            assert report.type_dict == expected_type_mock[mock_id]
+            assert report.type == expected_type_mock[mock_id]
