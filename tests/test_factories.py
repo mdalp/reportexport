@@ -1,5 +1,4 @@
 from __future__ import absolute_import, unicode_literals
-import json
 import pytest
 
 from reportexport.models import Report
@@ -46,4 +45,4 @@ class TestReportFactory:
         reports = ReportFactory.create_batch(n_reports)
 
         for report, mock_id in zip(reports, expected_type_mock_list):
-            assert report.type_dict == json.loads(expected_type_mock[mock_id])
+            assert report.type_dict == expected_type_mock[mock_id]

@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 """Factories to help in tests."""
 from __future__ import absolute_import, unicode_literals
-import json
 from factory import Sequence
 from factory.alchemy import SQLAlchemyModelFactory
 
@@ -20,9 +19,12 @@ class BaseFactory(SQLAlchemyModelFactory):
 
 
 def _text_sequence(n):
-    mock_data = json.load(open('tests/data/mock_data.json', 'r'))
+    with open('tests/data/mock_data.txt', 'r') as data:
+        data_str = data.read().strip()
+
+    mock_data = dict(map(lambda row: row.split(' ', 1), data_str.split('\n')))
     idx = 1 + n % len(mock_data)
-    return json.dumps(mock_data[str(idx)])
+    return mock_data[str(idx)]
 
 
 class ReportFactory(BaseFactory):
