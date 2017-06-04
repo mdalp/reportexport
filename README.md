@@ -3,7 +3,7 @@ Report Exporting Service
 
 [![Build Status](https://travis-ci.org/mdalp/reportexport.svg?branch=master)](https://travis-ci.org/mdalp/reportexport)
 
-version number: 0.0.2
+version number: 0.0.3
 author: Marcello Dalponte
 
 Overview
