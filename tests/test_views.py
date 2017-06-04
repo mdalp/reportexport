@@ -12,7 +12,7 @@ class TestReport:
         res = testapp.get('/report/report-1.txt')
 
         assert res.status_code == 404
-        assert b"Report not available in &quot;txt&quot; format. Formats available: xml, pdf" in res.data
+        assert b"Report not available in &quot;txt&quot; format. Formats available: pdf, xml" in res.data
 
     def test_invalid_report_id_404(self, testapp, db):
         """A request for a not existing id returns 404."""
