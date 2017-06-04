@@ -1,4 +1,4 @@
-from __future__ import absolute_import
+from __future__ import absolute_import, unicode_literals
 from io import BytesIO
 
 from .factories import ReportFactory
@@ -12,7 +12,7 @@ class TestReport:
         res = testapp.get('/report/report-1.txt')
 
         assert res.status_code == 404
-        assert 'Report not available in &quot;txt&quot; format. Formats available: [\'xml\', \'pdf\']' in res.data
+        assert "Report not available in &quot;txt&quot; format. Formats available: [u'xml', u'pdf']" in res.data
 
     def test_invalid_report_id_404(self, testapp, db):
         """A request for a not existing id returns 404."""

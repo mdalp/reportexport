@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 """Report models."""
+from __future__ import absolute_import, unicode_literals
 import json
 from cached_property import cached_property
 

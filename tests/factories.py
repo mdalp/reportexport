@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """Factories to help in tests."""
-from __future__ import absolute_import
+from __future__ import absolute_import, unicode_literals
 import json
 from factory import Sequence
 from factory.alchemy import SQLAlchemyModelFactory

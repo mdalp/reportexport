@@ -6,7 +6,7 @@ python:
   - "3.6"
 
 script:
- - py.test --cov=reportexport tests/
+ - py.test --cov=reportexport tests/ -vv
 
 install:
   - make devinstall
