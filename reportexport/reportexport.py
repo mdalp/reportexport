@@ -16,7 +16,7 @@ def report_pdf(report_id, extension):
     try:
         template = Template.get_template(extension)
     except InvalidTemplate:
-        abort(404, 'Report not available in "{}" format. Formats available: {}.'.format(extension, Template._TEMPLATES.keys()))
+        abort(404, 'Report not available in "{}" format. Formats available: {}.'.format(extension, ', '.join(Template._TEMPLATES.keys())))
 
     report = Report.get_by_id(report_id)
 
