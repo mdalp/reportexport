@@ -1,0 +1,13 @@
+# Base
+-r requirements.txt
+
+# Dev/Deployment
+sphinx
+sphinx_rtd_theme
+nose
+coverage
+pypi-publisher
+
+factory-boy==2.8.1
+pytest==3.1.1
+PyPDF2==1.26
