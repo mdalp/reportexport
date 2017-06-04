@@ -12,14 +12,14 @@ class TestReport:
         res = testapp.get('/report/report-1.txt')
 
         assert res.status_code == 404
-        assert "Report not available in &quot;txt&quot; format. Formats available: [u'xml', u'pdf']" in res.data
+        assert b"Report not available in &quot;txt&quot; format. Formats available: [u'xml', u'pdf']" in res.data
 
     def test_invalid_report_id_404(self, testapp, db):
         """A request for a not existing id returns 404."""
         res = testapp.get('/report/report-1.xml')
 
         assert res.status_code == 404
-        assert 'Report with id &quot;1&quot; does not exist.' in res.data
+        assert b'Report with id &quot;1&quot; does not exist.' in res.data
 
     def test_valid_report_id(self, testapp, db):
         """Test a request for a report with a valid report_id and extension returns 200."""
@@ -67,4 +67,4 @@ class TestHealthCheck:
         res = testapp.get('/report/healthcheck')
 
         assert res.status_code == 200
-        assert res.data == 'OK'
+        assert res.data == b'OK'
