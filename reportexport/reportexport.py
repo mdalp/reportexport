@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """Flask report generator."""
 from flask import Blueprint, abort, make_response
-from cStringIO import StringIO
+from io import BytesIO
 
 from .exceptions import InvalidTemplate
 from .models import Report

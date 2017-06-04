@@ -1,6 +1,6 @@
 import json
 import pytest
-from cStringIO import StringIO
+from io import BytesIO
 
 from reportexport.exceptions import AlreadyRegisteredError, InvalidTemplate
 from reportexport.templates import Template
@@ -68,7 +68,7 @@ class TestPdfTemplate:
 
         res = Template.get_template('pdf').render(report)
 
-        buff = StringIO()
+        buff = BytesIO()
         buff.write(res)
 
         assert compare_pdf(buff, report1_pdf)
@@ -79,7 +79,7 @@ class TestPdfTemplate:
 
         res = Template.get_template('pdf').render(report)
 
-        buff = StringIO()
+        buff = BytesIO()
         buff.write(res)
 
         with pytest.raises(PdfNotEqualException):
@@ -115,7 +115,7 @@ class TestPdfTemplate:
         report = Report(2, report_type_dict)
         res = Template.get_template('pdf').render(report)
 
-        buff = StringIO()
+        buff = BytesIO()
         buff.write(res)
 
         assert compare_pdf(buff, report2_pdf) is True
@@ -130,7 +130,7 @@ class TestXMLTemplate:
 
         res = Template.get_template('xml').render(report)
 
-        buff = StringIO()
+        buff = BytesIO()
         buff.write(res)
 
         assert buff.getvalue() == report1_xml.read().strip()
@@ -141,7 +141,7 @@ class TestXMLTemplate:
 
         res = Template.get_template('xml').render(report)
 
-        buff = StringIO()
+        buff = BytesIO()
         buff.write(res)
 
         assert buff.getvalue() != report1_xml.read().strip()

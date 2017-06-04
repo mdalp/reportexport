@@ -1,4 +1,4 @@
-from cStringIO import StringIO
+from io import BytesIO
 
 from .factories import ReportFactory
 from .utils import compare_pdf, PdfNotEqualException
@@ -50,7 +50,7 @@ class TestReport:
         assert res.status_code == 200
 
         # with open('tests/data/report-1.pdf', 'rb') as expected_data:
-        buff = StringIO()
+        buff = BytesIO()
         buff.write(res.data)
 
         try:

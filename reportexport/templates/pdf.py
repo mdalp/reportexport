@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from cStringIO import StringIO
+from io import BytesIO
 from reportlab.lib.enums import TA_JUSTIFY, TA_RIGHT, TA_CENTER
 from reportlab.lib.pagesizes import letter
 from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer
@@ -20,7 +20,7 @@ class PDFTemplate(Template):
 
     @staticmethod
     def render(report):
-        buff = StringIO()
+        buff = BytesIO()
         doc = SimpleDocTemplate(
             buff, pagesize=letter,
             rightMargin=72, leftMargin=72, topMargin=72, bottomMargin=18,

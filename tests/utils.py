@@ -1,5 +1,5 @@
 import PyPDF2
-from cStringIO import StringIO
+from io import BytesIO
 
 
 class PdfNotEqualException(Exception):
@@ -15,8 +15,8 @@ def compare_pdf(stream1, stream2):
     This wont detect differences in layout
 
     Args:
-        stream1(stream): pdf file stream to compare (e.g. StringIO())
-        stream2(stream): pdf file stream to compare (e.g. StringIO())
+        stream1(stream): pdf file stream to compare (e.g. BytesIO())
+        stream2(stream): pdf file stream to compare (e.g. BytesIO())
 
     Return:
         (bool) True if the pdf have the same content, False otherwise
