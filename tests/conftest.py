@@ -1,3 +1,6 @@
+# -*- coding: utf-8 -*-
+"""Fixtures to help in tests."""
+from __future__ import absolute_import
 import pytest
 
 from reportexport.app import create_app

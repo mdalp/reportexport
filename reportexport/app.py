@@ -1,7 +1,8 @@
 # -*- coding: utf-8 -*-
+from __future__ import absolute_import
 from flask import Flask
 
-import reportexport
+from . import reportexport
 from .extensions import db, migrate
 from .settings import ProdConfig
 

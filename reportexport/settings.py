@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 """Application configuration."""
+from __future__ import absolute_import
 import os
 
 

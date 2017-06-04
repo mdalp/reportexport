@@ -1,4 +1,7 @@
 # -*- coding: utf-8 -*-
+from __future__ import absolute_import
+
+
 class InvalidTemplate(Exception):
     """There is no template for given extension."""
 

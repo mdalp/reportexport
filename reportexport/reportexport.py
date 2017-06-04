@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """Flask report generator."""
+from __future__ import absolute_import
 from flask import Blueprint, abort, make_response
-from io import BytesIO
 
 from .exceptions import InvalidTemplate
 from .models import Report
