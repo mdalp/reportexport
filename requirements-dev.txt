@@ -12,4 +12,4 @@ pypi-publisher
 factory-boy==2.8.1
 pytest==3.1.1
 pytest-cov==2.5.1
-PyPDF2==1.26  # used to compare pdfs
+PyPDF2==1.27.5  # used to compare pdfs
