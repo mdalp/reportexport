@@ -1,5 +1,5 @@
 # Flask
-flask==1.0
+flask==2.3.2
 Flask-Migrate==2.0.4
 Flask-SQLAlchemy==2.2
 
